@@ -4,12 +4,19 @@
 #include <assert.h>
 
 const double PRECISION = 1e-6;
+const int MAXSIZE = 1000;
+const int NUMBER_OF_COEFFICIENTS = 3;
 
 int get_coefficients (double *a, double *b, double *c);
+
 int square_solver (double a, double b, double c, double *ptr_x1, double *ptr_x2);
+
 int print_solution (double x1, double x2, int number_of_roots);
+
 int compare (double a, double b);
+
 int a_null_square_solver (double b, double c, double *ptr_x1);
+
 int a_not_null_square_solver (double a, double b, double c, double *ptr_x1, double *ptr_x2);
 
 //---------------------------------------------------
@@ -56,6 +63,11 @@ int main()
 
         }
 
+    } else {
+
+        printf("Вы неверно ввели коеффициенты уравнения");
+        return 1;
+
     }
 
 }
@@ -67,9 +79,17 @@ int get_coefficients (double *ptr_a, double *ptr_b, double *ptr_c)
     assert(ptr_b != 0);
     assert(ptr_c != 0);
 
-    scanf("%lg %lg %lg", ptr_a, ptr_b, ptr_c);
+    char check[MAXSIZE] = {0};
 
-    return 0;
+    if (scanf("%lg %lg %lg %s", ptr_a, ptr_b, ptr_c, check) == NUMBER_OF_COEFFICIENTS) {
+
+        return 0;
+
+    } else {
+
+        return 1;
+
+    }
 
 }
 
