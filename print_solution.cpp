@@ -1,4 +1,5 @@
 #include "print_solution.h"
+#include "color_print.h"
 
 int print_solution (double x1, double x2, int number_of_roots)
 {
@@ -7,30 +8,30 @@ int print_solution (double x1, double x2, int number_of_roots)
 
         case 0 :
 
-            printf ("Ваше уравнение не имеет решений в действительных числах");
+            printf (RESET "\nВаше уравнение" CHANGE_ON ORANGE TEXT_COLOR " не имеет решений" RESET " в действительных числах\n");
             return 0;
 
         case 1 :
 
-            printf ("Ваше уравнение имеет 1 решение:\n"
-                    " x = %lg\n", x1);
+            printf (RESET "\nВаше уравнение имеет" CHANGE_ON ORANGE TEXT_COLOR " 1 " RESET "решение:\n"
+                    CHANGE_ON ORANGE TEXT_COLOR " x = %lg" RESET "\n", x1);
             return 0;
 
         case 2 :
 
-            printf ("Ваше уравнение имеет 2 решения:\n"
+            printf (RESET "\nВаше уравнение имеет " CHANGE_ON ORANGE TEXT_COLOR "2" RESET " решения:\n"
                     " x1 = %lg\n"
                     " x2 = %lg\n", x1, x2);
             return 0;
 
         case 3 :
 
-            printf ("Ваше уравнение имеет бесконечное количество решений");
+            printf (RESET "\nВаше уравнение имеет " CHANGE_ON ORANGE TEXT_COLOR "бесконечное количество решений" RESET "\n");
             return 0;
 
         default :
 
-            printf ("К сожалению, во время выполнения программы программы произошла ошибка");
+            printf (RESET "\nК сожалению, во время выполнения программы программы произошла ошибка\n");
             return 1;
 
     }

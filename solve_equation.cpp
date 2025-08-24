@@ -1,10 +1,8 @@
 #include "solve_equation.h"
-
-const double PRECISION = 1e-6;
+#include "help_func.h"
 
 int solve_linearer (double b, double c, double *ptr_x1);
 int solve_square (double a, double b, double c, double *ptr_x1, double *ptr_x2);
-int compare (double a, double b);
 
 int  solve_equation (double a, double b, double c, double *ptr_x1, double *ptr_x2)
 {
@@ -45,7 +43,12 @@ int solve_linearer (double b, double c, double *ptr_x1)
 
         }
 
-    } else {    // if a == 0, b != 0
+    } else if(compare(c, 0) == 0) {    // if a == 0, b != 0
+
+        *ptr_x1 = 0;
+        return 1;
+
+    } else {
 
         *ptr_x1 = - c / b;
         return 1;
@@ -89,20 +92,3 @@ int solve_square (double a, double b, double c, double *ptr_x1, double *ptr_x2)
 
 
 
-int compare (double a, double b)
-{
-    if (a > b + PRECISION) {
-
-        return 1;
-
-    } else if ( b > a + PRECISION) {
-
-        return -1;
-
-    } else {
-
-        return 0;
-
-    }
-
-}
