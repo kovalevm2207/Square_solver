@@ -38,7 +38,7 @@ int main()
     int failed = run_test_solve();
     if (failed == 0) {
 
-        printf( CHANGE_ON LIGHT_GREEN WHITH DARK_GREY_BACK TEXT_COLOR "The program test has been completed successfully :)" RESET
+        printf( CHANGE_ON LIGHT_GREEN TEXT_COLOR "The program test has been completed successfully :)" RESET
                                                             "\n\n\n" );
 
         double a = 0, b = 0, c = 0;
@@ -61,6 +61,7 @@ int main()
 
     } else {
 
+        printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "----------------------------------------------------------------------------" RESET "\n");
         return 1;
 
     }

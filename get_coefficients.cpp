@@ -21,7 +21,8 @@ void get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)
 
     while ( scanf("%lg %lg %lg", ptr_a, ptr_b, ptr_c) != NUMBER_OF_COEFFICIENTS || run_to_end() != 0 ) {
 
-        printf(RESET "\nВы " CHANGE_ON BLINKING WHITH RED TEXT_COLOR "неверно" RESET " ввели коеффициенты. Введите коеффициенты " CHANGE_ON UNDERLINED TEXT_COLOR "еще раз" RESET "\n\n");
+        printf(RESET "\nВы " CHANGE_ON BLINKING WHITH RED TEXT_COLOR "неверно" RESET " ввели коеффициенты. Введите коеффициенты " CHANGE_ON UNDERLINED TEXT_COLOR "еще раз" RESET
+               "\n\n" CHANGE_ON CYAN TEXT_COLOR);
         clear_input_buffer();
 
     }

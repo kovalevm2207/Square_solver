@@ -14,7 +14,7 @@ int run_test_solve()
     double  x2ref[] = {0, 0, 0,  0,    0,  2, 0,  0,    0};
     int roots_ref[] = {3, 0, 1,  1,    1,  2, 0,  1,    1};
 
-    int failed = 0;
+    int failed = 0;        //1                          1
 
     for (unsigned int i = 0; i < sizeof(a) / sizeof( a[0] ); ++i) {
 
