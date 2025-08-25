@@ -14,25 +14,45 @@ int run_test_solve()
                             },
 
                             {
-                                {.a =   0,  .b =    0,  .c =    1},
-                                {.x1ref =     0,  .x2ref =    0,  .roots_ref =    0}
+                                {.a = 0, .b = 0, .c = 1},
+                                {.x1ref = 0, .x2ref = 0, .roots_ref = 0}
                             },
 
                             {
-                                {.a =   0,  .b =    1,  .c =    0},
-                                {.x1ref =     0,  .x2ref =    0,  .roots_ref =    1}   },
+                                {.a = 0, .b = 1, .c =  0},
+                                {.x1ref = 0, .x2ref = 0, .roots_ref = 1}
+                            },
 
-                          {   {.a =   0,  .b =    1,  .c =   -2},     {.x1ref =     2,  .x2ref =    0,  .roots_ref =    1}   },
+                            {
+                                {.a = 0, .b = 1, .c = -2},
+                                {.x1ref = 2, .x2ref = 0, .roots_ref = 1}
+                            },
 
-                          {   {.a =   0,  .b =    4,  .c =   -1},     {.x1ref =  0,25,  .x2ref =    0,  .roots_ref =    1}   },
+                            {
+                                {.a = 0, .b = 4, .c = -1},
+                                {.x1ref = 0.25, .x2ref = 0, .roots_ref = 1}
+                            },
 
-                          {   {.a =   1,  .b =   -5,  .c =    6},     {.x1ref =     3,  .x2ref =    2,  .roots_ref =    2}   },
+                            {
+                                {.a = 1, .b = -5, .c = 6},
+                                {.x1ref = 3, .x2ref = 2, .roots_ref = 2}
+                            },
 
-                          {   {.a =   1,  .b =    2,  .c =    2},     {.x1ref =     0,  .x2ref =    0,  .roots_ref =    0}   },
+                            {
+                                {.a = 1, .b = 2, .c = 2},
+                                {.x1ref = 0, .x2ref = 0, .roots_ref = 0}
+                            },
 
-                          {   {.a =   1,  .b =    2,  .c =    1},     {.x1ref =    -1,  .x2ref =    0,  .roots_ref =    1}   },
+                            {
+                                {.a = 1, .b = 2, .c = 1},
+                                {.x1ref = -1, .x2ref = 0, .roots_ref = 1}
+                            },
 
-                          {   {.a =   4,  .b =    4,  .c =    1},     {.x1ref =  -0,5,  .x2ref =    0,  .roots_ref =    1}   } };  */
+                            {
+                                {.a = 4, .b = 4, .c = 1},
+                                {.x1ref = -0.5, .x2ref = 0, .roots_ref = 1}
+                            }
+                        };
 
     int failed = 0;
 
