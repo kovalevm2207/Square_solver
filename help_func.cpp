@@ -30,6 +30,8 @@ int analise_anser (void)
 
     while( !( (ans == YES || ans == NO) && run_to_end() == 0) ) {
 
+        clear_input_buffer();
+
         printf(RESET "\nВыбран не существующий вариант ответа"
                "\n"
                "Введите его " CHANGE_ON UNDERLINED TEXT_COLOR "еще раз" RESET " (1 - 'ДА' , 2 - 'НЕТ')\n\n" CHANGE_ON CYAN TEXT_COLOR );
