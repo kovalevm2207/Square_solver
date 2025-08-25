@@ -80,6 +80,9 @@ int run_test_solve()
 
 int one_test_solve(test_param *data)
 {
+
+    assert (data != 0);
+
     double x1 = 0, x2 = 0;
 
     int number_of_roots = solve_equation(data->kef.a, data->kef.b, data->kef.c, &x1, &x2);
