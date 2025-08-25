@@ -37,7 +37,7 @@ print_solution.o: print_solution.cpp
 
 	@g++ $(DED_FLAGS_W) print_solution.cpp -c
 
-help_func.o: print_solution.cpp
+help_func.o: help_func.cpp
 
 	@g++ $(DED_FLAGS_W) help_func.cpp -c
 

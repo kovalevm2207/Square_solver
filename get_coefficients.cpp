@@ -1,11 +1,8 @@
 #include "get_coefficients.h"
 #include "color_print.h"
+#include "help_func.h"
 
-void clear_input_buffer(void);
-int run_to_end(void);
-
-
-void get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)
+int get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)    // возвращает ответ пользователя
 {
     assert(ptr_a != 0);
     assert(ptr_b != 0);
@@ -22,29 +19,18 @@ void get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)
 
     while ( scanf("%lg %lg %lg", ptr_a, ptr_b, ptr_c) != NUMBER_OF_COEFFICIENTS || run_to_end() != 0 ) {
 
-        printf(RESET "\nВы " CHANGE_ON BLINKING WHITH RED TEXT_COLOR "неверно" RESET " ввели коеффициенты. Введите коеффициенты " CHANGE_ON UNDERLINED TEXT_COLOR "еще раз" RESET
-               "\n\n" CHANGE_ON CYAN TEXT_COLOR);
+        printf(RESET "\nВы " CHANGE_ON BLINKING WHITH RED TEXT_COLOR "неверно" RESET " ввели коеффициенты."
+               "\n\n"
+               "Повторить попытку? (Введите 1 - 'ДА' или 2 - 'НЕТ')\n\n" CHANGE_ON CYAN TEXT_COLOR);
         clear_input_buffer();
 
-    }
-
-
-}
-
-
-
-
-
-
-int run_to_end(void)
-{
-    int sumbol = 0;
-
-    while ( (sumbol = getchar() ) != COD_POINT_ENTER) {
-
-        if (sumbol != ' ') {
+        if (analise_anser() == 1) {  //'no'
 
             return 1;
+
+        } else {
+
+            printf(RESET "Введите коеффициенты " CHANGE_ON UNDERLINED TEXT_COLOR "еще раз" RESET "\n\n" CHANGE_ON CYAN TEXT_COLOR);
 
         }
 
@@ -53,19 +39,4 @@ int run_to_end(void)
     return 0;
 
 }
-
-
-
-void clear_input_buffer(void)
-{
-    int sumbol = 0;
-
-    while ( (sumbol = getchar()) != COD_POINT_ENTER ) {
-
-        ;
-
-    }
-
-}
-
 
