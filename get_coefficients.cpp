@@ -10,7 +10,8 @@ void get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)
     assert(ptr_a != 0);
     assert(ptr_b != 0);
     assert(ptr_c != 0);
-
+    printf( CHANGE_ON PURPLE TEXT_COLOR "----------------------------------------------------------------------------" RESET
+                                               "\n\n\n" );
     printf(CHANGE_ON BOLD WHITH LIGHT_PURPLE TEXT_COLOR "Вы открыли рограмму для решения квадратных уравнений" RESET CHANGE_ON BLINKING WHITH LIGHT_PURPLE TEXT_COLOR " !!!" RESET "\n"
            "\n"
            "\n"

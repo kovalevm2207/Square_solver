@@ -1,6 +1,6 @@
 #include "help_func.h"
 
-const double PRECISION = 1e-6;
+const double PRECISION = 1e-12;
 
 int compare (double a, double b)
 {

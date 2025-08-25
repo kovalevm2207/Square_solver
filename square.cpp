@@ -1,17 +1,11 @@
 #include <stdio.h>
 #include <TXLib.h>
-#include <math.h>
-#include <assert.h>
 
 
 #include "get_coefficients.h"
 #include "solve_equation.h"
 #include "print_solution.h"
-#include "help_func.h"
-#include "test_solve.h"
 #include "color_print.h"
-
-
 
 
 
@@ -32,36 +26,21 @@
 
 int main()
 {
-    printf( CHANGE_ON PURPLE TEXT_COLOR "----------------------------------------------------------------------------" RESET
-                                               "\n\n\n" );
 
-    int failed = run_test_solve();
-    if (failed == 0) {
+    double a = 0, b = 0, c = 0;
+    double x1 = 0, x2 = 0;
 
-        printf( CHANGE_ON LIGHT_GREEN TEXT_COLOR "The program test has been completed successfully :)" RESET
-                                                            "\n\n\n" );
+    get_coefficients (&a ,&b ,&c);
 
-        double a = 0, b = 0, c = 0;
-        double x1 = 0, x2 = 0;
+    int number_of_roots = solve_equation (a, b, c, &x1, &x2);
 
-        get_coefficients (&a ,&b ,&c);
+    int check_print = print_solution (x1, x2, number_of_roots);
+    if (check_print == 0) {
 
-        int number_of_roots = solve_equation (a, b, c, &x1, &x2);
-
-        int check_print = print_solution (x1, x2, number_of_roots);
-        if (check_print == 0) {
-
-            return 0;
-
-        } else {
-
-            return 1;
-
-        }
+        return 0;
 
     } else {
 
-        printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "----------------------------------------------------------------------------" RESET "\n");
         return 1;
 
     }

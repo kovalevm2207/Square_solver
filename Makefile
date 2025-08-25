@@ -21,9 +21,9 @@ DED_FLAGS_L=-D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-
 			-Wlarger-than=8192 -Wstack-usage=8192 -pie -fPIE -Werror=vla \
 			-fsanitize=address,alignment,bool,bounds,enum,float-cast-overflow,float-divide-by-zero,integer-divide-by-zero,leak,nonnull-attribute,null,object-size,return,returns-nonnull-attribute,shift,signed-integer-overflow,undefined,unreachable,vla-bound,vptr
 
-all:    square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o   test_solve.o
+all:    square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o
 
-	@g++ $(DED_FLAGS_W) square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o   test_solve.o
+	@g++ $(DED_FLAGS_W) square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o
 
 square.o: square.cpp
 
@@ -48,6 +48,14 @@ solve_equation.o: solve_equation.cpp
 test_solve.o: test_solve.cpp
 
 	@g++ $(DED_FLAGS_W) test_solve.cpp -c
+
+test_main.o: test_main.cpp
+
+	@g++ $(DED_FLAGS_W) test_main.cpp -c
+
+test: test_main.o   test_solve.o   solve_equation.o   help_func.o
+
+	@g++ $(DED_FLAGS_W) test_main.o   test_solve.o   solve_equation.o   help_func.o
 
 clean:
 
