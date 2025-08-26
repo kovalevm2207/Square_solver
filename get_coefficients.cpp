@@ -7,12 +7,8 @@ int get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)    // возвращ
     assert(ptr_a != 0);
     assert(ptr_b != 0);
     assert(ptr_c != 0);
-    printf( CHANGE_ON PURPLE TEXT_COLOR "----------------------------------------------------------------------------" RESET
-                                               "\n\n\n" );
-    printf(CHANGE_ON BOLD WHITH LIGHT_PURPLE TEXT_COLOR "Вы открыли рограмму для решения квадратных уравнений" RESET CHANGE_ON BLINKING WHITH LIGHT_PURPLE TEXT_COLOR " !!!" RESET "\n"
-           "\n"
-           "\n"
-           "Приведите свое уравнение к виду " CHANGE_ON UNDERLINED WHITH ORANGE TEXT_COLOR "a*x^2+b*x+c=0" RESET "\n"
+
+    printf("Приведите свое уравнение к виду " CHANGE_ON UNDERLINED WHITH ORANGE TEXT_COLOR "a*x^2+b*x+c=0" RESET "\n"
            "\n"
            "Введите коеффициенты в порядке " CHANGE_ON ORANGE TEXT_COLOR "a, b, c" RESET " через пробел:\n\n" CHANGE_ON CYAN TEXT_COLOR);
 
@@ -22,6 +18,7 @@ int get_coefficients (double* ptr_a, double* ptr_b, double* ptr_c)    // возвращ
         printf(RESET "\nВы " CHANGE_ON BLINKING WHITH RED TEXT_COLOR "неверно" RESET " ввели коеффициенты."
                "\n\n"
                "Повторить попытку? (Введите 1 - 'ДА' или 2 - 'НЕТ')\n\n" CHANGE_ON CYAN TEXT_COLOR);
+
         clear_input_buffer();
 
         if (analise_anser() == 1) {  //'no'

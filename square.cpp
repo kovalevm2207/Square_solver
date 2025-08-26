@@ -26,6 +26,10 @@
 
 int main()
 {
+    printf( CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- МЯУ" RESET
+                                               "\n\n\n" );
+    printf(CHANGE_ON BOLD WHITH LIGHT_PURPLE TEXT_COLOR "Вы открыли рограмму для решения квадратных уравнений" RESET CHANGE_ON BLINKING WHITH LIGHT_PURPLE TEXT_COLOR " !!!" RESET "\n"
+           "\n\n");
 
     double a = 0, b = 0, c = 0;
     double x1 = 0, x2 = 0;
