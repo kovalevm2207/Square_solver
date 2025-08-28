@@ -17,43 +17,44 @@ DED_FLAGS_A="-D NDEBUG $(DED_FLAGS_DEFAULT)"
 
 
 
-all:   square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o
+all: main.o  square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o  \
+	 test_main.o  test_solve.o
 
-	@g++ $(DED_FLAGS_L) square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o
-
-test: test_main.o   test_solve.o   solve_equation.o   help_func.o
-
-	@g++ $(DED_FLAGS_L)  test_main.o   test_solve.o   solve_equation.o   help_func.o
+	@g++ $(DED_FLAGS_L) main.o  square.o   get_coefficients.o   print_solution.o   help_func.o  \
+	                    solve_equation.o  test_main.o   test_solve.o
 
 
 
 
+main.o: main.cpp
 
-square.o: square.cpp
+	@g++ $(DED_FLAGS_L) main.cpp -c
+
+square.o: square.cpp   square.h
 
 	@g++ $(DED_FLAGS_L) square.cpp -c
 
-get_coefficients.o: get_coefficients.cpp get_coefficients.h
+get_coefficients.o: get_coefficients.cpp   get_coefficients.h
 
 	@g++ $(DED_FLAGS_L) get_coefficients.cpp -c
 
-print_solution.o: print_solution.cpp print_solution.h
+print_solution.o: print_solution.cpp   print_solution.h
 
 	@g++ $(DED_FLAGS_L) print_solution.cpp -c
 
-help_func.o: help_func.cpp help_func.h
+help_func.o: help_func.cpp   help_func.h
 
 	@g++ $(DED_FLAGS_L) help_func.cpp -c
 
-solve_equation.o: solve_equation.cpp solve_equation.h
+solve_equation.o: solve_equation.cpp   solve_equation.h
 
 	@g++ $(DED_FLAGS_L) solve_equation.cpp -c
 
-test_solve.o: test_solve.cpp test_solve.h
+test_solve.o: test_solve.cpp   test_solve.h
 
 	@g++ $(DED_FLAGS_L) test_solve.cpp -c
 
-test_main.o: test_main.cpp
+test_main.o: test_main.cpp   test_main.h
 
 	@g++ $(DED_FLAGS_L) test_main.cpp -c
 
@@ -61,19 +62,19 @@ test_main.o: test_main.cpp
 
 
 
-assert:   square_assert.o   get_coefficients_assert.o   print_solution_assert.o   help_func_assert.o   solve_equation_assert.o
+assert: main_assert.o  square_assert.o   get_coefficients_assert.o   print_solution_assert.o   help_func_assert.o  \
+	    solve_equation_assert.o   test_main_assert.o  test_solve_assert.o
 
-	@g++ $(DED_FLAGS_A) square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o
-
-
-test_assert: test_main_assert.o   test_solve_assert.o   solve_equation_assert.o   help_func_assert.o
-
-	@g++ $(DED_FLAGS_A) test_main.o   test_solve.o   solve_equation.o   help_func.o
+	@g++ $(DED_FLAGS_A) main.o  square.o   get_coefficients.o   print_solution.o   help_func.o   \
+						solve_equation.o  test_main.o   test_solve.o
 
 
 
+main_assert.o: main.cpp
 
-square_assert.o: square.cpp
+	@g++ $(DED_FLAGS_A) main.cpp -c
+
+square_assert.o: square.cpp  square.h
 
 	@g++ $(DED_FLAGS_A) square.cpp -c
 
@@ -97,12 +98,9 @@ test_solve_assert.o: test_solve.cpp test_solve.h
 
 	@g++ $(DED_FLAGS_A) test_solve.cpp -c
 
-test_main_assert.o: test_main.cpp
+test_main_assert.o: test_main.cpp test_main.h
 
 	@g++ $(DED_FLAGS_A) test_main.cpp -c
-
-
-
 
 
 

@@ -54,7 +54,7 @@ int run_test_solve()
 
     for (unsigned int i = 0; i < sizeof(data) / sizeof( data[0] ); ++i) {
 
-        if (one_test_solve(data[i]) == 0) {
+        if (one_test_solve(&data[i]) == 0) {
 
             printf(CHANGE_ON RED TEXT_COLOR "ERORR" RESET " in example number" CHANGE_ON RED TEXT_COLOR " %u" RESET "\n\n", i+1);
 

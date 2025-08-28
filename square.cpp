@@ -1,31 +1,6 @@
-#include <stdio.h>
-//#include <TXLib.h>
+#include "square.h"
 
-
-#include "get_coefficients.h"
-#include "solve_equation.h"
-#include "print_solution.h"
-#include "color_print.h"
-
-//---------------------------------------------------
-//! Программа для решения уравнения вида a*x^2 + b*x + c = 0
-//!
-//! @param [in]  a  a-коеффициент
-//! @param [in]  b  b-коеффициент
-//! @param [in]  c  c-коеффициент
-//! @param [out] x1 первый корень уравнения
-//! @param [out] x2 второй корень уравнения
-//!
-//! @return количество корней уравнения
-//!
-//! @note
-//!
-//---------------------------------------------------
-//#include <string.h>
-//strcmp()   // ok = 0
-//const int END = 1;
-
-int main()
+int square(void)
 {
     printf( CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- МЯУ" RESET
                                                "\n\n\n" );
@@ -38,7 +13,6 @@ int main()
 
     int answer = get_coefficients (&a ,&b ,&c);
 
-
     if (answer == 1) {
 
         printf(RESET "Пользователь завершил выполнение программы.\n");
@@ -50,7 +24,7 @@ int main()
 
         if (number_of_roots == 4) {
 
-            return 1;
+            return 0;
 
         } else {
 
@@ -63,4 +37,3 @@ int main()
     return 0;
 
 }
-

@@ -1,10 +1,6 @@
-#include <stdio.h>
-//#include <TXLib.h>
+#include "test_main.h"
 
-#include "test_solve.h"
-#include "color_print.h"
-
-int main()
+int test(void)
 {
     printf( CHANGE_ON PURPLE TEXT_COLOR "----------------------------------------------------------------------------" RESET
                                                "\n\n\n" );
