@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <TXLib.h>
+//#include <TXLib.h>
 
 #include "test_solve.h"
 #include "color_print.h"
@@ -13,7 +13,8 @@ int main()
     if (failed == 0) {
 
         printf( CHANGE_ON LIGHT_GREEN TEXT_COLOR "The program test has been completed successfully :)" RESET
-                                                            "\n\n\n" );
+
+                                                "\n\n\n" );
 
     } else {
 

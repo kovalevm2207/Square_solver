@@ -1,43 +1,42 @@
 #include "print_solution.h"
-#include "color_print.h"
 
-int print_solution (double x1, double x2, int number_of_roots)
+void print_solution (double x1, double x2, int number_of_roots)
 {
 
     switch (number_of_roots) {
 
-        case 0 :
+        case ANSER_ZERO :
 
-            printf (RESET "\nВаше уравнение" CHANGE_ON ORANGE TEXT_COLOR " не имеет решений" RESET " в действительных числах\n");
+            printf (RESET "\nР’Р°С€Рµ СѓСЂР°РІРЅРµРёРµ " CHANGE_ON ORANGE TEXT_COLOR " РЅРµ РёРјРµРµС‚ СЂРµС€РµРЅРёР№" RESET " РІ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅС‹С… С‡РёСЃР»Р°С…\n");
             printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- COMMIT GITHUB" RESET "\n");
-            return 0;
+            break;
 
-        case 1 :
+        case ANSER_ONE :
 
-            printf (RESET "\nВаше уравнение имеет" CHANGE_ON ORANGE TEXT_COLOR " 1 " RESET "решение:\n\n"
+            printf (RESET "\nР’Р°С€Рµ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚" CHANGE_ON ORANGE TEXT_COLOR " 1 " RESET "СЂРµС€РµРЅРёРµ:\n\n"
                     CHANGE_ON ORANGE TEXT_COLOR " x = %lg" RESET "\n", x1);
             printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- COMMIT GITHUB" RESET "\n");
-            return 0;
+            break;
 
-        case 2 :
+        case ANSER_TWO :
 
-            printf (RESET "\nВаше уравнение имеет " CHANGE_ON ORANGE TEXT_COLOR "2" RESET " решения:\n\n"
+            printf (RESET "\nР’Р°С€Рµ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ " CHANGE_ON ORANGE TEXT_COLOR "2" RESET " СЂРµС€РµРЅРёСЏ:\n\n"
                     CHANGE_ON ORANGE TEXT_COLOR " x1 = %lg" RESET "\n\n"
                     CHANGE_ON ORANGE TEXT_COLOR " x2 = %lg" RESET "\n", x1, x2);
             printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- COMMIT GITHUB" RESET "\n");
-            return 0;
+            break;
 
-        case 3 :
+        case ANSER_INF :
 
-            printf (RESET "\nВаше уравнение имеет " CHANGE_ON ORANGE TEXT_COLOR "бесконечное количество решений" RESET "\n");
+            printf (RESET "\nР’Р°С€Рµ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ " CHANGE_ON ORANGE TEXT_COLOR "Р±РµСЃРєРѕРЅРµС‡РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂРµС€РµРЅРёР№" RESET "\n");
             printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- COMMIT GITHUB" RESET "\n");
-            return 0;
+            break;
 
         default :
 
-            printf (RESET "\nК сожалению, во время выполнения программы программы произошла ошибка\n");
+            printf (RESET "\nРљ СЃРѕР¶Р°Р»РµРЅРёСЋ , РІ С…РѕРґРµ РІС‹РїРѕР»РµРЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹ РїСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°\n");
             printf("\n\n" CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- COMMIT GITHUB" RESET "\n");
-            return 1;
+            break;
 
     }
 

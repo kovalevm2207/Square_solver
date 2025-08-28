@@ -1,5 +1,6 @@
 #include "help_func.h"
-#include "color_print.h"
+
+
 
 int compare (double a, double b)
 {
@@ -32,9 +33,9 @@ int analise_anser (void)
 
         clear_input_buffer();
 
-        printf(RESET "\nВыбран не существующий вариант ответа"
+        printf(RESET "\nР’С‹Р±СЂР°РЅ РЅРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёР№ РІР°СЂРёР°РЅС‚ РѕС‚РІРµС‚Р° "
                "\n"
-               "Введите его " CHANGE_ON UNDERLINED TEXT_COLOR "еще раз" RESET " (1 - 'ДА' , 2 - 'НЕТ')\n\n" CHANGE_ON CYAN TEXT_COLOR );
+               "Р’РІРµРґРёС‚Рµ РѕС‚РІРµС‚ " CHANGE_ON UNDERLINED TEXT_COLOR "РµС‰Рµ СЂР°Р·" RESET " (1 - 'РґР°' , 2 - 'РЅРµС‚')\n\n" CHANGE_ON CYAN TEXT_COLOR );
 
         scanf("%d", &ans);
 

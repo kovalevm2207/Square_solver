@@ -1,8 +1,4 @@
 #include "test_solve.h"
-#include "solve_equation.h"
-#include "help_func.h"
-#include "color_print.h"
-
 
 int run_test_solve()
 {
@@ -58,15 +54,15 @@ int run_test_solve()
 
     for (unsigned int i = 0; i < sizeof(data) / sizeof( data[0] ); ++i) {
 
-        if (one_test_solve(&data[i]) == 0) {
+        if (one_test_solve(data[i]) == 0) {
 
-            printf(CHANGE_ON RED TEXT_COLOR "ERORR" RESET " in example number" CHANGE_ON RED TEXT_COLOR " %d" RESET "\n\n", i+1);
+            printf(CHANGE_ON RED TEXT_COLOR "ERORR" RESET " in example number" CHANGE_ON RED TEXT_COLOR " %u" RESET "\n\n", i+1);
 
             ++failed;
 
         } else {
 
-            printf(CHANGE_ON GREEN TEXT_COLOR "SUCCESS" RESET " in example number" CHANGE_ON GREEN TEXT_COLOR " %d" RESET "\n\n", i+1);
+            printf(CHANGE_ON GREEN TEXT_COLOR "SUCCESS" RESET " in example number" CHANGE_ON GREEN TEXT_COLOR " %u" RESET "\n\n", i+1);
 
         }
 
@@ -81,7 +77,7 @@ int run_test_solve()
 int one_test_solve(test_param *data)
 {
 
-    assert (data != 0);
+    my_assert (data != 0);
 
     double x1 = 0, x2 = 0;
 

@@ -1,6 +1,13 @@
+#ifndef TEST_SOLVE
+#define TEST_SOLVE
+
+
 #include <stdio.h>
-#include <TXLib.h>
-#include <assert.h>
+//#include <TXLib.h>
+#include "my_assert.h"
+#include "solve_equation.h"
+#include "help_func.h"
+#include "color_print.h"
 
 struct coeffitients
 {
@@ -9,7 +16,7 @@ struct coeffitients
 
 };
 
-struct roots                // { x1ref, x2ref, roots_ref}
+struct Roots                // { x1ref, x2ref, roots_ref}
 {
 
     double x1ref, x2ref;
@@ -21,7 +28,7 @@ struct test_param            // { kef , ans }
 {
 
    coeffitients kef;
-   roots ans;
+    Roots ans;
 
 };
 
@@ -30,3 +37,7 @@ struct test_param            // { kef , ans }
 int one_test_solve(test_param* data);
 
 int run_test_solve(void);
+
+
+
+#endif // TEST_SOLVE

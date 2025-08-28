@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <TXLib.h>
+//#include <TXLib.h>
 
 
 #include "get_coefficients.h"
@@ -7,28 +7,30 @@
 #include "print_solution.h"
 #include "color_print.h"
 
-
-
 //---------------------------------------------------
-//! Решения квадратного уравнения a*x^2 + b*x + c = 0
+//! РџСЂРѕРіСЂР°РјРјР° РґР»СЏ СЂРµС€РµРЅРёСЏ СѓСЂР°РІРЅРµРЅРёСЏ РІРёРґР° a*x^2 + b*x + c = 0
 //!
-//! @param [in]  a  a-коеффициент
-//! @param [in]  b  b-коеффициент
-//! @param [in]  c  c-коеффициент
-//! @param [out] x1 переменная для первого корня
-//! @param [out] x2 переменная для второго корня
+//! @param [in]  a  a-РєРѕРµС„С„РёС†РёРµРЅС‚
+//! @param [in]  b  b-РєРѕРµС„С„РёС†РёРµРЅС‚
+//! @param [in]  c  c-РєРѕРµС„С„РёС†РёРµРЅС‚
+//! @param [out] x1 РїРµСЂРІС‹Р№ РєРѕСЂРµРЅСЊ СѓСЂР°РІРЅРµРЅРёСЏ
+//! @param [out] x2 РІС‚РѕСЂРѕР№ РєРѕСЂРµРЅСЊ СѓСЂР°РІРЅРµРЅРёСЏ
 //!
-//! @return завершилась или нет
+//! @return РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕСЂРЅРµР№ СѓСЂР°РІРЅРµРЅРёСЏ
 //!
 //! @note
 //!
 //---------------------------------------------------
+//#include <string.h>
+//strcmp()   // ok = 0
+//const int END = 1;
 
 int main()
 {
-    printf( CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- МЯУ" RESET
+    printf( CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- РњРЇРЈ" RESET
                                                "\n\n\n" );
-    printf(CHANGE_ON BOLD WHITH LIGHT_PURPLE TEXT_COLOR "Вы открыли рограмму для решения квадратных уравнений" RESET CHANGE_ON BLINKING WHITH LIGHT_PURPLE TEXT_COLOR " !!!" RESET "\n"
+    printf(CHANGE_ON BOLD WHITH LIGHT_PURPLE TEXT_COLOR " Р’С‹ РѕС‚РєСЂС‹Р»Рё РїСЂРѕРіСЂР°РјРјСѓ РґР»СЏ СЂРµС€РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅС‹С… СѓСЂР°РІРЅРµРЅРёР№"
+           CHANGE_ON BLINKING WHITH LIGHT_PURPLE TEXT_COLOR " !!!" RESET "\n"
            "\n\n");
 
     double a = 0, b = 0, c = 0;
@@ -39,25 +41,26 @@ int main()
 
     if (answer == 1) {
 
-        printf(RESET "Пользователь завершил выполнение программы");
+        printf(RESET "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р·Р°РІРµСЂС€РёР» РІС‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹.\n");
         return 0;
 
     } else {
 
         int number_of_roots = solve_equation (a, b, c, &x1, &x2);
 
-        int check_print = print_solution (x1, x2, number_of_roots);
-        if (check_print == 0) {
+        if (number_of_roots == 4) {
 
-            return 0;
+            return 1;
 
         } else {
 
-            return 1;
+            print_solution (x1, x2, number_of_roots);
 
         }
 
     }
+
+    return 0;
 
 }
 
