@@ -5,17 +5,11 @@ int main(const int argc, const char* const argv[])
 {
     if (argc == 1) {
 
-        help_me();
+        help_me(argv);
 
     } else {
 
-        int check_discription = output_description(argc , argv );
-
-        if (check_discription == 1) {
-
-            return 1;
-
-        }
+        output_description(argc, argv);
 
     }
 

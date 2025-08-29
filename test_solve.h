@@ -3,11 +3,13 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
+
 //#include <TXLib.h>
 #include "my_assert.h"
 #include "solve_equation.h"
-#include "help_func.h"
 #include "color_print.h"
+#include "help_func.h"
 
 struct coeffitients
 {
@@ -32,11 +34,9 @@ struct test_param            // { kef , ans }
 
 };
 
-
-//int one_test_solve(double a, double b, double c, double x1ref, double x2ref, int roots_ref);
 int one_test_solve(test_param* data);
 
-int run_test_solve(void);
+int run_base_test_solve(void);
 
 
 

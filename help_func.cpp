@@ -1,7 +1,6 @@
 #include "help_func.h"
 
 
-
 int compare (double a, double b)
 {
     if (a > b + PRECISION) {
@@ -19,8 +18,6 @@ int compare (double a, double b)
     }
 
 }
-
-
 
 
 int analise_anser (void)
@@ -54,7 +51,6 @@ int analise_anser (void)
 }
 
 
-
 int run_to_end(void)
 {
     int sumbol = 0;
@@ -74,7 +70,6 @@ int run_to_end(void)
 }
 
 
-
 void clear_input_buffer(void)
 {
     int sumbol = 0;
@@ -86,3 +81,4 @@ void clear_input_buffer(void)
     }
 
 }
+
