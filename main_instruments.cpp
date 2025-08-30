@@ -4,6 +4,8 @@
 void output_description(const int argc, const char* const argv[])
 {
 
+    my_assert(argv != 0);
+
     for (int i = 1; i < argc; i++) {
 
         if        (strcmp(argv[i], "--help") == 0) {
@@ -16,20 +18,7 @@ void output_description(const int argc, const char* const argv[])
 
         } else if (strcmp(argv[i], "--test") == 0) {
 
-            FILE* file = fopen(argv[i + 1], "r");
-
-            if (file == NULL) {
-
-                base_test();
-
-            } else {
-
-                i++;
-                base_test();
-                added_test(file);
-
-
-            }
+            i += test(argv, i);
 
         } else {
 

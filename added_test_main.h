@@ -6,6 +6,7 @@
 
 #include "added_test_solve.h"
 #include "color_print.h"
+#include "my_assert.h"
 
 void added_test(FILE* file);
 

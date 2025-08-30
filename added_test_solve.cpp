@@ -3,12 +3,12 @@
 int run_added_test_solve(FILE* file)
 {
 
+    my_assert(file != 0);
+
     int failed = 0;
-
-
+    test_param add_data = {0};
+                     //   v---<------<------<------<-----number of tests in file
     for(size_t i = 0; i < 9; i++) {
-
-        test_param add_data = {  {.a = 0, .b = 0, .c = 0}, {.x1ref = 0, .x2ref = 0, .roots_ref = 0}  };
 
         fscanf(file, "%lf %lf %lf %lf %lf %d", &add_data.kef.a, &add_data.kef.b, &add_data.kef.c, &add_data.ans.x1ref,
                                                &add_data.ans.x2ref, &add_data.ans.roots_ref );
@@ -27,7 +27,7 @@ int run_added_test_solve(FILE* file)
 
         }
 
-        add_data ={  {.a = 0, .b = 0, .c = 0}, {.x1ref = 0, .x2ref = 0, .roots_ref = 0}  };
+        add_data ={0};
 
     }
 

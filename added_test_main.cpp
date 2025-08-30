@@ -2,6 +2,8 @@
 
 void added_test(FILE* file)
 {
+    my_assert(file != 0);
+
     printf( CHANGE_ON PURPLE TEXT_COLOR "---------------------------------------------------------------------------- МЯУ" RESET "\n"
                                         "Выполение внешних тестов:"
                                         "\n\n" );

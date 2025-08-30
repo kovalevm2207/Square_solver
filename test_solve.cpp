@@ -52,7 +52,7 @@ int run_base_test_solve(void)
                                 }
                               };
 
-    for (size_t i = 0; i < sizeof(basic_data) / sizeof(basic_data[0] ); ++i) {
+    for (size_t i = 0; i < sizeof(basic_data) / sizeof(basic_data[0]); ++i) {
 
         if (one_test_solve(&basic_data[i]) == 0) {
 

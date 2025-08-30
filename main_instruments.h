@@ -5,8 +5,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "square.h"
-#include "test_main.h"
-#include "added_test_main.h"
+#include "test.h"
+#include "my_assert.h"
 
 
 void help_me(const char* const argv[]);

@@ -18,10 +18,10 @@ DED_FLAGS_A="-D NDEBUG $(DED_FLAGS_DEFAULT)"
 
 
 all: main.o  main_instruments.o   square.o   get_coefficients.o   print_solution.o   help_func.o   solve_equation.o  \
-	 test_main.o  test_solve.o   added_test_main.o   added_test_solve.o
+	 test_main.o  test_solve.o   added_test_main.o   added_test_solve.o   test.o
 
 	@g++ $(DED_FLAGS_L) main.o  main_instruments.o   square.o   get_coefficients.o   print_solution.o   help_func.o  \
-	                    solve_equation.o  test_main.o   test_solve.o   added_test_main.o   added_test_solve.o
+	                    solve_equation.o  test_main.o   test_solve.o   added_test_main.o   added_test_solve.o   test.o
 
 
 
@@ -70,16 +70,18 @@ added_test_main.o: added_test_main.cpp   added_test_main.h
 
 	@g++ $(DED_FLAGS_L) added_test_main.cpp -c
 
+test.o: test.cpp test.h
 
+	@g++ $(DED_FLAGS_L) test.cpp -c
 
 
 assert: main_assert.o  square_assert.o   get_coefficients_assert.o   print_solution_assert.o   help_func_assert.o  \
 	    solve_equation_assert.o   test_main_assert.o  test_solve_assert.o   main_instruments_assert.o  \
-		added_test_main_assert.o   added_test_solve_assert.o
+		added_test_main_assert.o   added_test_solve_assert.o   test_assert.o
 
 	@g++ $(DED_FLAGS_A) main.o  square.o   get_coefficients.o   print_solution.o   help_func.o   \
 						solve_equation.o  test_main.o   test_solve.o   main_instruments.o   \
-						added_test_main.o   added_test_solve.o
+						added_test_main.o   added_test_solve.o   test.o
 
 
 
@@ -127,6 +129,9 @@ added_test_main_assert.o: added_test_main.cpp   added_test_main.h
 
 	@g++ $(DED_FLAGS_A) added_test_main.cpp -c
 
+test_assert.o: test.cpp   test.h
+
+	@g++ $(DED_FLAGS_A) test.cpp -c
 
 
 clean:
